@@ -1,0 +1,47 @@
+
+{%  extends 'base/base.html' %}
+
+{%block header%} 
+{%endblock %} 
+
+{% block content %} 
+
+{% if validlink %}
+
+
+<div class="form-gap"></div>
+<h2>Nueva Contrasena</h2>
+<div class="container">
+	<div class="row">
+
+			
+			<form class="form" action="">
+					{% csrf_token  %}
+				<div class="form-group">
+					{{form.newpassword1.errors}}
+					<label for="username" class="text-white">Nueva contrasena:</label><br>
+					{{from.newpassword1}}
+				</div>
+				<div class="form-group">
+						{{form.newpassword2.errors}}
+						<label for="username" class="text-white">Nueva contrasena:</label><br>
+						{{from.newpassword2}}
+				</div>
+				<div class="form-group">
+					<input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+				</div>
+			</form>
+
+
+
+	</div>
+</div>
+
+{%  else %}
+
+<h3>ENLACE INVALIDO, ESTE LINK YA SE USO</h3>
+
+{%endif%}
+
+{% endblock %} 
+

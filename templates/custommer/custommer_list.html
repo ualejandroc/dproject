@@ -1,0 +1,46 @@
+{%  extends 'base/base.html' %}
+
+
+{%block content%} 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%  if  custommers  %}
+        {%  for custommer in custommers  %}
+
+        <tr>
+                <th scope="row">{{custommer.id}}</th>
+                <td>{{custommer.name}}</td>
+                <td>{{custommer.document}}</td>
+                <td>{{custommer.edge}}</td>
+                <td>  <a class="btn btn-primary" href="{% url  'custommer:custommer_edit' custommer.id    %}" >Editar</a> </td>
+                <td>  <a class="btn btn-danger" href="{% url 'custommer:custommer_delete' custommer.id  %}" >Borrar</a> </td>
+
+         </tr>
+
+       
+        {%  endfor   %}
+
+        {% else  %}
+
+        <tr>
+                <th scope="row">No hay registros</th>
+                
+        </tr>
+
+        {%  endif   %}
+
+     
+    </tbody>
+  </table>
+
+
+{% endblock%}

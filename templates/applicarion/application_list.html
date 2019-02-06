@@ -1,0 +1,46 @@
+{%  extends 'base/base.html' %}
+
+
+{%block content%} 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Codigo CLiente</th>
+        <th scope="col">Razones</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%  if  object_list  %}
+        {%  for application in object_list  %}
+
+        <tr>
+                <th scope="row">1</th>
+                <td>{{custommer.name}}</td>
+                <td>{{custommer.document}}</td>
+                <td>{{custommer.edge}}</td>
+                <td>  <a class="btn btn-primary" href="#" >Editar</a> </td>
+                <td>  <a class="btn btn-danger" href="#" >Borrar</a> </td>
+
+         </tr>
+
+       
+        {%  endfor   %}
+
+        {% else  %}
+
+        <tr>
+                <th scope="row">No hay registros</th>
+                
+        </tr>
+
+        {%  endif   %}
+
+      
+    </tbody>
+  </table>
+
+
+{% endblock%}
