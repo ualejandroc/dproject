@@ -12,12 +12,23 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 from ai.matplot import make_fig
 
+from ai.aitest import learnTest, aiTest1, aiTest2, aiTest3
+
 
 
 # Create your views here.
 def index(request):
     #Se renderiza un html harcode
-    #return HttpResponse("Index")
-    make_fig()
+    #return HttpResponse("Index") 
+    #make_fig()
+
+    #learnTest()
+
+    # aiTest1()
+
+    # aiTest2()
+
+    aiTest3()
+
     return render(request,'arti/index.html')
 
